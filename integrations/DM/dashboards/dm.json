@@ -1,0 +1,3367 @@
+{
+    "name": "dm",
+    "tags": "",
+    "ident": "26.26.26.",
+    "configs": {
+        "graphTooltip": "default",
+        "graphZoom": "default",
+        "panels": [
+            {
+                "collapsed": true,
+                "id": "af69ac70-bb42-4e7d-9e19-a65f63ba9d0c",
+                "layout": {
+                    "h": 1,
+                    "w": 24,
+                    "x": 0,
+                    "y": 0,
+                    "i": "af69ac70-bb42-4e7d-9e19-a65f63ba9d0c",
+                    "isResizable": false
+                },
+                "name": "basic_info(基础信息)",
+                "panels": [],
+                "type": "row"
+            },
+            {
+                "custom": {
+                    "calc": "last",
+                    "colSpan": 1,
+                    "colorMode": "value",
+                    "graphMode": "none",
+                    "textMode": "value",
+                    "textSize": {},
+                    "valueField": "Value"
+                },
+                "datasourceCate": "prometheus",
+                "datasourceValue": "${prom}",
+                "description": "连接状态",
+                "id": "3c431e38-ee03-4e4e-9127-96cb766f08e2",
+                "layout": {
+                    "h": 4,
+                    "w": 3,
+                    "x": 0,
+                    "y": 1,
+                    "i": "3c431e38-ee03-4e4e-9127-96cb766f08e2",
+                    "isResizable": true
+                },
+                "maxPerRow": 4,
+                "name": "dm_up",
+                "links": [
+                    {
+                        "title": "指标查询链接",
+                        "url": "/metric/explorer?prom_ql=dm_up",
+                        "targetBlank": true
+                    }
+                ],
+                "options": {
+                    "standardOptions": {},
+                    "thresholds": {
+                        "steps": [
+                            {
+                                "color": "#634CD9",
+                                "type": "base",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "valueMappings": [
+                        {
+                            "match": {
+                                "special": 0
+                            },
+                            "result": {
+                                "color": "rgba(236, 14, 14, 1)",
+                                "text": "Down"
+                            },
+                            "type": "special"
+                        },
+                        {
+                            "match": {
+                                "special": 1
+                            },
+                            "result": {
+                                "color": "rgba(63, 196, 83, 1)",
+                                "text": "UP"
+                            },
+                            "type": "special"
+                        }
+                    ]
+                },
+                "targets": [
+                    {
+                        "expr": "dm_up",
+                        "refId": "A"
+                    }
+                ],
+                "transformations": [
+                    {
+                        "id": "organize",
+                        "options": {}
+                    }
+                ],
+                "type": "stat",
+                "version": "3.0.0"
+            },
+            {
+                "custom": {
+                    "drawStyle": "lines",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "lineInterpolation": "smooth",
+                    "lineWidth": 1,
+                    "scaleDistribution": {
+                        "type": "linear"
+                    },
+                    "spanNulls": false,
+                    "stack": "off"
+                },
+                "datasourceCate": "prometheus",
+                "datasourceValue": "${prom}",
+                "description": "采集器采集时间",
+                "id": "2246b0f3-384f-43b8-a2b1-33051f6507fa",
+                "layout": {
+                    "h": 4,
+                    "w": 13,
+                    "x": 3,
+                    "y": 1,
+                    "i": "2246b0f3-384f-43b8-a2b1-33051f6507fa",
+                    "isResizable": true
+                },
+                "maxPerRow": 4,
+                "name": "scrape_use_seconds",
+                "links": [
+                    {
+                        "title": "指标查询链接",
+                        "url": "/metric/explorer?prom_ql=dm_scrape_use_seconds",
+                        "targetBlank": true
+                    }
+                ],
+                "options": {
+                    "legend": {
+                        "behaviour": "showItem",
+                        "displayMode": "hidden"
+                    },
+                    "standardOptions": {},
+                    "thresholds": {
+                        "steps": [
+                            {
+                                "color": "#634CD9",
+                                "type": "base",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "tooltip": {
+                        "mode": "all",
+                        "sort": "none"
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byFrameRefID"
+                        },
+                        "properties": {
+                            "rightYAxisDisplay": "off"
+                        }
+                    }
+                ],
+                "targets": [
+                    {
+                        "expr": "dm_scrape_use_seconds",
+                        "refId": "A"
+                    }
+                ],
+                "transformations": [
+                    {
+                        "id": "organize",
+                        "options": {}
+                    }
+                ],
+                "type": "timeseries",
+                "version": "3.0.0"
+            },
+            {
+                "custom": {
+                    "calc": "lastNotNull",
+                    "colSpan": 1,
+                    "colorMode": "value",
+                    "graphMode": "none",
+                    "textMode": "valueAndName",
+                    "textSize": {},
+                    "valueField": "Value"
+                },
+                "datasourceCate": "prometheus",
+                "datasourceValue": "${prom}",
+                "description": "数据库使用端口号",
+                "id": "ff70fed7-b43c-4041-939b-9f6e3b82dd2e",
+                "layout": {
+                    "h": 4,
+                    "w": 4,
+                    "x": 16,
+                    "y": 1,
+                    "i": "ff70fed7-b43c-4041-939b-9f6e3b82dd2e",
+                    "isResizable": true
+                },
+                "maxPerRow": 4,
+                "name": "PORT_NUM",
+                "links": [
+                    {
+                        "title": "指标查询链接",
+                        "url": "/metric/explorer?prom_ql=dm_PORT_NUM",
+                        "targetBlank": true
+                    }
+                ],
+                "options": {
+                    "standardOptions": {
+                        "util": "none"
+                    },
+                    "thresholds": {
+                        "steps": [
+                            {
+                                "color": "#634CD9",
+                                "type": "base",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "targets": [
+                    {
+                        "expr": "dm_PORT_NUM",
+                        "refId": "A"
+                    }
+                ],
+                "transformations": [
+                    {
+                        "id": "organize",
+                        "options": {}
+                    }
+                ],
+                "type": "stat",
+                "version": "3.0.0"
+            },
+            {
+                "custom": {
+                    "calc": "lastNotNull",
+                    "colSpan": 1,
+                    "colorMode": "value",
+                    "graphMode": "none",
+                    "textMode": "valueAndName",
+                    "textSize": {},
+                    "valueField": "Value"
+                },
+                "datasourceCate": "prometheus",
+                "datasourceValue": "${prom}",
+                "description": "数据库的最大连接会话数量。(所有通过用户连接的数量+每个用户的会话数的总和)",
+                "id": "c8a042c7-c3b3-450f-9edd-df0ae39f0c3a",
+                "layout": {
+                    "h": 4,
+                    "w": 4,
+                    "x": 20,
+                    "y": 1,
+                    "i": "c8a042c7-c3b3-450f-9edd-df0ae39f0c3a",
+                    "isResizable": true
+                },
+                "maxPerRow": 4,
+                "name": "MAX_SESSIONS",
+                "links": [
+                    {
+                        "title": "指标查询链接",
+                        "url": "/metric/explorer?prom_ql=dm_MAX_SESSIONS",
+                        "targetBlank": true
+                    }
+                ],
+                "options": {
+                    "standardOptions": {},
+                    "thresholds": {
+                        "steps": [
+                            {
+                                "color": "#634CD9",
+                                "type": "base",
+                                "value": null
+                            }
+                        ]
+                    }
+                },
+                "targets": [
+                    {
+                        "expr": "dm_MAX_SESSIONS",
+                        "refId": "A"
+                    }
+                ],
+                "transformations": [
+                    {
+                        "id": "organize",
+                        "options": {}
+                    }
+                ],
+                "type": "stat",
+                "version": "3.0.0"
+            },
+            {
+                "custom": {
+                    "drawStyle": "lines",
+                    "fillOpacity": 0,
+                    "gradientMode": "none",
+                    "lineInterpolation": "smooth",
+                    "lineWidth": 1,
+                    "scaleDistribution": {
+                        "type": "linear"
+                    },
+                    "spanNulls": false,
+                    "stack": "off"
+                },
+                "datasourceCate": "prometheus",
+                "datasourceValue": "${prom}",
+                "description": "达梦数据库连接数",
+                "id": "ed407112-67e4-48c9-8cce-76d0b054b400",
+                "layout": {
+                    "h": 5,
+                    "w": 24,
+                    "x": 0,
+                    "y": 5,
+                    "i": "ed407112-67e4-48c9-8cce-76d0b054b400",
+                    "isResizable": true
+                },
+                "maxPerRow": 4,
+                "name": "dm_connection_nums",
+                "links": [
+                    {
+                        "title": "指标查询链接",
+                        "url": "/metric/explorer?prom_ql=dm_connection_nums",
+                        "targetBlank": true
+                    }
+                ],
+                "options": {
+                    "legend": {
+                        "behaviour": "showItem",
+                        "displayMode": "hidden"
+                    },
+                    "standardOptions": {},
+                    "thresholds": {
+                        "steps": [
+                            {
+                                "color": "#634CD9",
+                                "type": "base",
+                                "value": null
+                            }
+                        ]
+                    },
+                    "tooltip": {
+                        "mode": "all",
+                        "sort": "none"
+                    }
+                },
+                "overrides": [
+                    {
+                        "matcher": {
+                            "id": "byFrameRefID"
+                        },
+                        "properties": {
+                            "rightYAxisDisplay": "off"
+                        }
+                    }
+                ],
+                "targets": [
+                    {
+                        "expr": "dm_connection_nums",
+                        "refId": "A"
+                    }
+                ],
+                "transformations": [
+                    {
+                        "id": "organize",
+                        "options": {}
+                    }
+                ],
+                "type": "timeseries",
+                "version": "3.0.0"
+            },
+            {
+                "collapsed": false,
+                "id": "edbce7c5-cae0-44fc-a03f-c14ea3454f16",
+                "layout": {
+                    "h": 1,
+                    "w": 24,
+                    "x": 0,
+                    "y": 10,
+                    "i": "edbce7c5-cae0-44fc-a03f-c14ea3454f16",
+                    "isResizable": false
+                },
+                "name": "Thead 进程",
+                "panels": [
+                    {
+                        "custom": {
+                            "calc": "lastNotNull",
+                            "colSpan": 1,
+                            "colorMode": "value",
+                            "graphMode": "none",
+                            "textMode": "valueAndName",
+                            "textSize": {},
+                            "valueField": "Value"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "工作线程，由参数WORKER_THREADS控制，主要负责所有实际的数据相关操作",
+                        "id": "cbfc7360-5009-43f0-a8b0-a2333167bf82",
+                        "layout": {
+                            "h": 4,
+                            "i": "cbfc7360-5009-43f0-a8b0-a2333167bf82",
+                            "isResizable": true,
+                            "w": 4,
+                            "x": 0,
+                            "y": 20
+                        },
+                        "maxPerRow": 4,
+                        "name": "dm_wrkgrp_thd",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_wrkgrp_thd",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "targets": [
+                            {
+                                "expr": "dm_wrkgrp_thd",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "stat",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "calc": "lastNotNull",
+                            "colSpan": 1,
+                            "colorMode": "value",
+                            "graphMode": "none",
+                            "textMode": "valueAndName",
+                            "textSize": {},
+                            "valueField": "Value"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "IO线程，由IO_THR_GROUPS参数控制",
+                        "id": "7f6bfba9-a77c-4e87-b086-9d233727d5da",
+                        "layout": {
+                            "h": 4,
+                            "i": "529f2895-10c0-49d6-8879-47403ab5d547",
+                            "isResizable": true,
+                            "w": 4,
+                            "x": 4,
+                            "y": 20
+                        },
+                        "maxPerRow": 4,
+                        "name": "dm_io_thd",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_io_thd",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "targets": [
+                            {
+                                "expr": "dm_io_thd",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "stat",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "calc": "lastNotNull",
+                            "colSpan": 1,
+                            "colorMode": "value",
+                            "graphMode": "none",
+                            "textMode": "valueAndName",
+                            "textSize": {},
+                            "valueField": "Value"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "IO线程，主要处理HFS相关的IO读取操作",
+                        "id": "cf8365a9-ec56-41e1-bd9c-3380d73dc7e8",
+                        "layout": {
+                            "h": 4,
+                            "i": "ba21182a-948c-48cd-99d3-9374d013f074",
+                            "isResizable": true,
+                            "w": 4,
+                            "x": 8,
+                            "y": 20
+                        },
+                        "maxPerRow": 4,
+                        "name": "dm_hio_thd",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_hio_thd",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "targets": [
+                            {
+                                "expr": "dm_hio_thd",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "stat",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "calc": "lastNotNull",
+                            "colSpan": 1,
+                            "colorMode": "value",
+                            "graphMode": "none",
+                            "textMode": "valueAndName",
+                            "textSize": {},
+                            "valueField": "Value"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "任务线程，由参数TASK_THREADS控制，主要负责完成服务端SQL的解析运行等任务",
+                        "id": "37196095-712f-4c97-b250-fb16596dac26",
+                        "layout": {
+                            "h": 4,
+                            "i": "f974534d-878f-4f2e-84ca-351edc2f0294",
+                            "isResizable": true,
+                            "w": 4,
+                            "x": 12,
+                            "y": 20
+                        },
+                        "maxPerRow": 4,
+                        "name": "dm_tskwrk_thd",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_tskwrk_thd",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "targets": [
+                            {
+                                "expr": "dm_tskwrk_thd",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "stat",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "calc": "lastNotNull",
+                            "colSpan": 1,
+                            "colorMode": "value",
+                            "graphMode": "none",
+                            "textMode": "valueAndName",
+                            "textSize": {},
+                            "valueField": "Value"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "SQL 日志记录相关进程",
+                        "id": "3afb0b6f-6c2f-4556-b1c3-003e027ef758",
+                        "layout": {
+                            "h": 4,
+                            "i": "42a64427-bdc4-4a18-92e2-58f9a509fd9f",
+                            "isResizable": true,
+                            "w": 4,
+                            "x": 16,
+                            "y": 20
+                        },
+                        "maxPerRow": 4,
+                        "name": "dm_sqllog_thd",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_sqllog_thd",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "targets": [
+                            {
+                                "expr": "dm_sqllog_thd",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "stat",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "calc": "lastNotNull",
+                            "colSpan": 1,
+                            "colorMode": "value",
+                            "graphMode": "none",
+                            "textMode": "valueAndName",
+                            "textSize": {},
+                            "valueField": "Value"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "用于执行正常关闭数据库的线程",
+                        "id": "f9aa7a06-9742-4c99-b6e6-b2e29a305d3d",
+                        "layout": {
+                            "h": 4,
+                            "i": "0c2f5510-4393-4e45-80b2-0df9856cfc8a",
+                            "isResizable": true,
+                            "w": 4,
+                            "x": 20,
+                            "y": 20
+                        },
+                        "maxPerRow": 4,
+                        "name": "dm_quit_thd",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_quit_thd",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "targets": [
+                            {
+                                "expr": "dm_quit_thd",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "stat",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "calc": "lastNotNull",
+                            "colSpan": 1,
+                            "colorMode": "value",
+                            "graphMode": "none",
+                            "textMode": "valueAndName",
+                            "textSize": {},
+                            "valueField": "Value"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "审计线程，主要负责审计日志记录与更新",
+                        "id": "e971a515-cdb4-4019-8f3c-819857bbb1af",
+                        "layout": {
+                            "h": 4,
+                            "i": "9f48e0e8-6929-4630-bc5a-7efa17450482",
+                            "isResizable": true,
+                            "w": 4,
+                            "x": 0,
+                            "y": 24
+                        },
+                        "maxPerRow": 4,
+                        "name": "dm_audit_thd",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_audit_thd",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "targets": [
+                            {
+                                "expr": "dm_audit_thd",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "stat",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "calc": "lastNotNull",
+                            "colSpan": 1,
+                            "colorMode": "value",
+                            "graphMode": "none",
+                            "textMode": "valueAndName",
+                            "textSize": {},
+                            "valueField": "Value"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "检查点线程，主要负责CKPT_LSN的管理",
+                        "id": "61e14438-a9df-469d-8cb4-e9cd7a44dc0e",
+                        "layout": {
+                            "h": 4,
+                            "i": "abc59c40-05ab-4156-b72c-ca6764112eb1",
+                            "isResizable": true,
+                            "w": 4,
+                            "x": 4,
+                            "y": 24
+                        },
+                        "maxPerRow": 4,
+                        "name": "dm_chkpnt_thd",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_chkpnt_thd",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "targets": [
+                            {
+                                "expr": "dm_chkpnt_thd",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "stat",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "calc": "lastNotNull",
+                            "colSpan": 1,
+                            "colorMode": "value",
+                            "graphMode": "none",
+                            "textMode": "valueAndName",
+                            "textSize": {},
+                            "valueField": "Value"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "监听线程。主要负责数据库服务器端口监听，处理客户端请求，并将连接请求加入到工作线程的任务队列，由工作线程完成任务处理。监听线程在数据库服务启动完成之后才启动，关闭数据库时首先被关闭",
+                        "id": "5aff31cc-cded-4361-bbc7-990066e8f899",
+                        "layout": {
+                            "h": 4,
+                            "i": "64650f5b-dd73-42e9-969c-47a06fda044c",
+                            "isResizable": true,
+                            "w": 4,
+                            "x": 8,
+                            "y": 24
+                        },
+                        "maxPerRow": 4,
+                        "name": "dm_lsnr_thd",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_lsnr_thd",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "targets": [
+                            {
+                                "expr": "dm_lsnr_thd",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "stat",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "calc": "lastNotNull",
+                            "colSpan": 1,
+                            "colorMode": "value",
+                            "graphMode": "none",
+                            "textMode": "valueAndName",
+                            "textSize": {},
+                            "valueField": "Value"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "purge线程。主要负责回滚段清理",
+                        "id": "d8ea8f76-d99a-40c8-b58e-7f2e88cf29fc",
+                        "layout": {
+                            "h": 4,
+                            "i": "108667a4-8e36-4545-9fd4-5bb33a2dbb1a",
+                            "isResizable": true,
+                            "w": 4,
+                            "x": 12,
+                            "y": 24
+                        },
+                        "maxPerRow": 4,
+                        "name": "dm_purge_thd",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_purge_thd",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "targets": [
+                            {
+                                "expr": "dm_purge_thd",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "stat",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "calc": "lastNotNull",
+                            "colSpan": 1,
+                            "colorMode": "value",
+                            "graphMode": "none",
+                            "textMode": "valueAndName",
+                            "textSize": {},
+                            "valueField": "Value"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "调度线程，每秒钟轮询一次，主要负责接管数据库内部所有需要定时调度的任务，调度线程具备唤醒工作线程、向任务队列中添加任务队列、动态缓冲区检查、SQL缓存清理等权限",
+                        "id": "7c655442-031e-4a1b-a051-848990566802",
+                        "layout": {
+                            "h": 4,
+                            "i": "cab72882-7f1d-4bfd-939f-73ebcda2395f",
+                            "isResizable": true,
+                            "w": 4,
+                            "x": 16,
+                            "y": 24
+                        },
+                        "maxPerRow": 4,
+                        "name": "dm_sched_thd",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_sched_thd",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "targets": [
+                            {
+                                "expr": "dm_sched_thd",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "stat",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "calc": "lastNotNull",
+                            "colSpan": 1,
+                            "colorMode": "value",
+                            "graphMode": "none",
+                            "textMode": "valueAndName",
+                            "textSize": {},
+                            "valueField": "Value"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "日志flush线程，负责日志刷盘，当事物提交或者发生检查点是触发",
+                        "id": "edc07cb0-2438-48e4-935f-0a0000a19876",
+                        "layout": {
+                            "h": 4,
+                            "i": "4a7f61ec-9db0-466d-9e3a-24281167d882",
+                            "isResizable": true,
+                            "w": 4,
+                            "x": 20,
+                            "y": 24
+                        },
+                        "maxPerRow": 4,
+                        "name": "dm_redolog_thd",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_redolog_thd",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            }
+                        },
+                        "targets": [
+                            {
+                                "expr": "dm_redolog_thd",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "stat",
+                        "version": "3.0.0"
+                    }
+                ],
+                "type": "row"
+            },
+            {
+                "collapsed": false,
+                "id": "030f6280-458e-44e2-8611-f6e97e0c9516",
+                "layout": {
+                    "h": 1,
+                    "w": 24,
+                    "x": 0,
+                    "y": 11,
+                    "i": "030f6280-458e-44e2-8611-f6e97e0c9516",
+                    "isResizable": false
+                },
+                "name": "内存池",
+                "panels": [
+                    {
+                        "custom": {
+                            "drawStyle": "lines",
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "lineInterpolation": "smooth",
+                            "lineWidth": 1,
+                            "scaleDistribution": {
+                                "type": "linear"
+                            },
+                            "spanNulls": false,
+                            "stack": "off"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "id": "1451ab1e-4e05-480e-9db5-d3d3f905f51d",
+                        "layout": {
+                            "h": 4,
+                            "i": "6bd6ab51-66ff-446d-9626-30b7a95e791b",
+                            "isResizable": true,
+                            "w": 12,
+                            "x": 0,
+                            "y": 12
+                        },
+                        "maxPerRow": 4,
+                        "name": "mem_pool",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_mem_pool",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "legend": {
+                                "behaviour": "showItem",
+                                "displayMode": "hidden"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "expr": "dm_mem_pool",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "timeseries",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "drawStyle": "lines",
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "lineInterpolation": "smooth",
+                            "lineWidth": 1,
+                            "scaleDistribution": {
+                                "type": "linear"
+                            },
+                            "spanNulls": false,
+                            "stack": "off"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "id": "41131e25-1ff3-4f9e-b7e1-b0af2bd7ae7a",
+                        "layout": {
+                            "h": 4,
+                            "i": "41131e25-1ff3-4f9e-b7e1-b0af2bd7ae7a",
+                            "isResizable": true,
+                            "w": 12,
+                            "x": 12,
+                            "y": 12
+                        },
+                        "maxPerRow": 4,
+                        "name": "TOTAL_MB",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_mem_pool_total_mb",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "legend": {
+                                "behaviour": "showItem",
+                                "displayMode": "hidden"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "expr": "dm_mem_pool_total_mb",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "timeseries",
+                        "version": "3.0.0"
+                    }
+                ],
+                "type": "row"
+            },
+            {
+                "collapsed": false,
+                "id": "38690b4d-7fe3-40f3-8c6a-f2a267f759e1",
+                "layout": {
+                    "h": 1,
+                    "w": 24,
+                    "x": 0,
+                    "y": 12,
+                    "i": "38690b4d-7fe3-40f3-8c6a-f2a267f759e1",
+                    "isResizable": false
+                },
+                "name": "表空间",
+                "panels": [
+                    {
+                        "custom": {
+                            "drawStyle": "lines",
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "lineInterpolation": "smooth",
+                            "lineWidth": 1,
+                            "scaleDistribution": {
+                                "type": "linear"
+                            },
+                            "spanNulls": false,
+                            "stack": "off"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "表可用空间（GB）",
+                        "id": "b3fcd9bc-b0e1-4e20-bed5-b2017ff2ab45",
+                        "layout": {
+                            "h": 4,
+                            "i": "b3fcd9bc-b0e1-4e20-bed5-b2017ff2ab45",
+                            "isResizable": true,
+                            "w": 12,
+                            "x": 0,
+                            "y": 50
+                        },
+                        "maxPerRow": 4,
+                        "name": "FreeGB",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_table_space_info_free_gb",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "legend": {
+                                "behaviour": "showItem",
+                                "displayMode": "hidden"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "expr": "dm_table_space_info_free_gb",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "timeseries",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "drawStyle": "lines",
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "lineInterpolation": "smooth",
+                            "lineWidth": 1,
+                            "scaleDistribution": {
+                                "type": "linear"
+                            },
+                            "spanNulls": false,
+                            "stack": "off"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "表使用空间（GB）",
+                        "id": "a07bfe45-98df-44ce-9333-c59024fceaeb",
+                        "layout": {
+                            "h": 4,
+                            "i": "3fe755a0-5eb7-434c-b69e-65fd1a9c8708",
+                            "isResizable": true,
+                            "w": 12,
+                            "x": 12,
+                            "y": 50
+                        },
+                        "maxPerRow": 4,
+                        "name": "UsedGB",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_table_space_info_used_gb",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "legend": {
+                                "behaviour": "showItem",
+                                "displayMode": "hidden"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "expr": "dm_table_space_info_used_gb",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "timeseries",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "drawStyle": "lines",
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "lineInterpolation": "smooth",
+                            "lineWidth": 1,
+                            "scaleDistribution": {
+                                "type": "linear"
+                            },
+                            "spanNulls": false,
+                            "stack": "off"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "表总空间（GB）",
+                        "id": "9aaab353-6746-46bf-85ee-7eafc8ea8b87",
+                        "layout": {
+                            "h": 4,
+                            "i": "9aaab353-6746-46bf-85ee-7eafc8ea8b87",
+                            "isResizable": true,
+                            "w": 12,
+                            "x": 0,
+                            "y": 54
+                        },
+                        "maxPerRow": 4,
+                        "name": "TotalGB",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_table_space_info_total_gb",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "legend": {
+                                "behaviour": "showItem",
+                                "displayMode": "hidden"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off",
+                                    "standardOptions": {
+                                        "util": "percent"
+                                    }
+                                }
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "expr": "dm_table_space_info_total_gb",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "timeseries",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "drawStyle": "lines",
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "lineInterpolation": "smooth",
+                            "lineWidth": 1,
+                            "scaleDistribution": {
+                                "type": "linear"
+                            },
+                            "spanNulls": false,
+                            "stack": "off"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "表可用空间百分比",
+                        "id": "5eae9400-136f-4a25-b933-1e0b516fff47",
+                        "layout": {
+                            "h": 4,
+                            "i": "7ac9cbef-826f-4c84-8bd7-aa6147f3690f",
+                            "isResizable": true,
+                            "w": 12,
+                            "x": 12,
+                            "y": 54
+                        },
+                        "maxPerRow": 4,
+                        "name": "PerFree",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_table_space_info_free",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "legend": {
+                                "behaviour": "showItem",
+                                "displayMode": "hidden"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off",
+                                    "standardOptions": {
+                                        "util": "percent"
+                                    }
+                                }
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "expr": "dm_table_space_info_free",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "timeseries",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "drawStyle": "lines",
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "lineInterpolation": "smooth",
+                            "lineWidth": 1,
+                            "scaleDistribution": {
+                                "type": "linear"
+                            },
+                            "spanNulls": false,
+                            "stack": "off"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "表可用空间（MB）",
+                        "id": "349c9ec1-a4de-4ce9-8947-c1d1aceebe42",
+                        "layout": {
+                            "h": 4,
+                            "i": "349c9ec1-a4de-4ce9-8947-c1d1aceebe42",
+                            "isResizable": true,
+                            "w": 7,
+                            "x": 0,
+                            "y": 58
+                        },
+                        "maxPerRow": 4,
+                        "name": "FreeMB",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_table_space_usage_free_mb",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "legend": {
+                                "behaviour": "showItem",
+                                "displayMode": "hidden"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "expr": "dm_table_space_usage_free_mb",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "timeseries",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "drawStyle": "lines",
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "lineInterpolation": "smooth",
+                            "lineWidth": 1,
+                            "scaleDistribution": {
+                                "type": "linear"
+                            },
+                            "spanNulls": false,
+                            "stack": "off"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "表总空间（MB）",
+                        "id": "17d4fa24-a1f4-4c1f-b4b3-90fa4bfa8b8a",
+                        "layout": {
+                            "h": 4,
+                            "i": "519c9022-ecce-4696-b925-e9a2672bc0ff",
+                            "isResizable": true,
+                            "w": 9,
+                            "x": 7,
+                            "y": 58
+                        },
+                        "maxPerRow": 4,
+                        "name": "TotalMB",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_table_space_usage_total_mb",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "legend": {
+                                "behaviour": "showItem",
+                                "displayMode": "hidden"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "expr": "dm_table_space_usage_total_mb",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "timeseries",
+                        "version": "3.0.0"
+                    },
+                    {
+                        "custom": {
+                            "drawStyle": "lines",
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "lineInterpolation": "smooth",
+                            "lineWidth": 1,
+                            "scaleDistribution": {
+                                "type": "linear"
+                            },
+                            "spanNulls": false,
+                            "stack": "off"
+                        },
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "description": "表空间使用率",
+                        "id": "1a155d9d-916b-4bba-87b2-f799554ab197",
+                        "layout": {
+                            "h": 4,
+                            "i": "87d76e72-fb88-4d52-90bd-0480f1b81e3c",
+                            "isResizable": true,
+                            "w": 8,
+                            "x": 16,
+                            "y": 58
+                        },
+                        "maxPerRow": 4,
+                        "name": "UsagePercent",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_table_space_usage_percent",
+                                "targetBlank": true
+                            }
+                        ],
+                        "options": {
+                            "legend": {
+                                "behaviour": "showItem",
+                                "displayMode": "hidden"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "type": "base",
+                                        "value": null
+                                    }
+                                ]
+                            },
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ],
+                        "targets": [
+                            {
+                                "expr": "dm_table_space_usage_percent",
+                                "refId": "A"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "type": "timeseries",
+                        "version": "3.0.0"
+                    }
+                ],
+                "type": "row"
+            },
+            {
+                "type": "row",
+                "id": "70663a97-2dd3-4a5f-aac3-802dddb41b82",
+                "name": "CPU",
+                "collapsed": false,
+                "layout": {
+                    "h": 1,
+                    "w": 24,
+                    "x": 0,
+                    "y": 13,
+                    "i": "70663a97-2dd3-4a5f-aac3-802dddb41b82",
+                    "isResizable": false
+                },
+                "panels": [
+                    {
+                        "type": "timeseries",
+                        "id": "ff0ce413-f7e6-4b9d-b2c5-8624a2dd9b32",
+                        "layout": {
+                            "h": 4,
+                            "w": 8,
+                            "x": 0,
+                            "y": 5,
+                            "i": "ff0ce413-f7e6-4b9d-b2c5-8624a2dd9b32",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_cpu_system_rate"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "cpu_system_rate",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_cpu_system_rate",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "CPU系统使用率",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "ee0079a3-29b2-415e-82cf-7386496d860f",
+                        "layout": {
+                            "h": 4,
+                            "w": 8,
+                            "x": 8,
+                            "y": 5,
+                            "i": "1528aab3-6a5d-4086-8410-0364420134cb",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_cpu_idle_rate"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "cpu_idle_rate",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_cpu_idle_rate",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "CPU空闲率",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "df7f019d-fae6-434b-9455-604add5f9fe3",
+                        "layout": {
+                            "h": 4,
+                            "w": 8,
+                            "x": 16,
+                            "y": 5,
+                            "i": "942aea17-e270-4ab4-a40c-147c967f1bda",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_cpu_user_rate"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "cpu_user_rate",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_cpu_user_rate",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "CPU用户使用率",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "row",
+                "id": "568bb70d-a7b0-4c9a-ac3d-f171816a514d",
+                "name": "负载",
+                "collapsed": false,
+                "layout": {
+                    "h": 1,
+                    "w": 24,
+                    "x": 0,
+                    "y": 14,
+                    "i": "568bb70d-a7b0-4c9a-ac3d-f171816a514d",
+                    "isResizable": false
+                },
+                "panels": [
+                    {
+                        "type": "timeseries",
+                        "id": "0656fcbd-ece3-4c80-bc26-f93f48d23357",
+                        "layout": {
+                            "h": 4,
+                            "w": 8,
+                            "x": 0,
+                            "y": 19,
+                            "i": "0656fcbd-ece3-4c80-bc26-f93f48d23357",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_load_one_average"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "load_one_average",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_load_one_average",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "1分钟平均负载",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "32498bcc-0ae2-4dfc-9180-3d70cbb21c51",
+                        "layout": {
+                            "h": 4,
+                            "w": 8,
+                            "x": 8,
+                            "y": 19,
+                            "i": "68146fa2-c822-41f5-a4a6-8ff956a38ae8",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_load_five_average"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "load_five_average",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_load_five_average",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "5分钟平均负载",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "a489267b-9cc3-4a68-97ab-7e638bbb5b9a",
+                        "layout": {
+                            "h": 4,
+                            "w": 8,
+                            "x": 16,
+                            "y": 19,
+                            "i": "08d3f08e-507f-4d4a-a3f6-da1a2c2d8a4b",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_load_fifteen_average"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "load_fifteen_average",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_load_fifteen_average",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "15分钟平均负载",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "row",
+                "id": "24d98b1c-44a7-42fa-8072-42762ce1e568",
+                "name": "硬盘",
+                "collapsed": false,
+                "layout": {
+                    "h": 1,
+                    "w": 24,
+                    "x": 0,
+                    "y": 15,
+                    "i": "24d98b1c-44a7-42fa-8072-42762ce1e568",
+                    "isResizable": false
+                },
+                "panels": [
+                    {
+                        "type": "timeseries",
+                        "id": "afc7ce55-1be0-4390-9e89-55bcb1e56907",
+                        "layout": {
+                            "h": 4,
+                            "w": 12,
+                            "x": 0,
+                            "y": 16,
+                            "i": "afc7ce55-1be0-4390-9e89-55bcb1e56907",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_total_disk_size"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "total_disk_size",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_total_disk_size",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "总磁盘空间大小（字节）",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "ee9f9fb3-b963-4788-91ea-a486af735ffc",
+                        "layout": {
+                            "h": 4,
+                            "w": 12,
+                            "x": 12,
+                            "y": 16,
+                            "i": "c36613ea-649c-44e4-a17d-64222ad50b7a",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_free_disk_size"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "free_disk_size",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_free_disk_size",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "可用磁盘空间大小（字节）",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "row",
+                "id": "b7e393c9-d651-41c5-afd3-5c695cdfa910",
+                "name": "内存",
+                "collapsed": false,
+                "layout": {
+                    "h": 1,
+                    "w": 24,
+                    "x": 0,
+                    "y": 16,
+                    "i": "b7e393c9-d651-41c5-afd3-5c695cdfa910",
+                    "isResizable": false
+                },
+                "panels": [
+                    {
+                        "type": "timeseries",
+                        "id": "7d407ebb-45bc-4dcb-b2c6-f6716f34bf90",
+                        "layout": {
+                            "h": 4,
+                            "w": 12,
+                            "x": 0,
+                            "y": 17,
+                            "i": "7d407ebb-45bc-4dcb-b2c6-f6716f34bf90",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_total_phy_size"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "total_phy_size",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_total_phy_size",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "总物理内存大小（字节）",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "d3851830-0967-40a7-beaa-30f4cb67436c",
+                        "layout": {
+                            "h": 4,
+                            "w": 12,
+                            "x": 12,
+                            "y": 17,
+                            "i": "43dda4f0-e070-4fff-9bca-4e08c41fc331",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_free_phy_size"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "free_phy_size",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_free_phy_size",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "可用物理内存大小（字节）",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "7cc9787f-4a1e-4edf-8b29-b28e099ea12d",
+                        "layout": {
+                            "h": 4,
+                            "w": 12,
+                            "x": 0,
+                            "y": 21,
+                            "i": "8f7fdbdb-a0dc-401a-8fde-83faca646ff5",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_total_vir_size"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "total_vir_size",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_total_vir_size",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "总虚拟内存大小（字节）",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "a95d0a29-754e-4d38-abda-63d7b6754b3a",
+                        "layout": {
+                            "h": 4,
+                            "w": 12,
+                            "x": 12,
+                            "y": 21,
+                            "i": "c72b96ae-b97c-4208-8652-e58446e7f200",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_free_vir_size"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "free_vir_size",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_free_vir_size",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "可用虚拟内存大小（字节）",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "type": "row",
+                "id": "db7987b5-688d-4af8-88e3-54156a32bbce",
+                "name": "数据收发",
+                "collapsed": false,
+                "layout": {
+                    "h": 1,
+                    "w": 24,
+                    "x": 0,
+                    "y": 17,
+                    "i": "db7987b5-688d-4af8-88e3-54156a32bbce",
+                    "isResizable": false
+                },
+                "panels": [
+                    {
+                        "type": "timeseries",
+                        "id": "36fb35e9-98e0-430d-abc9-28beba71f7d2",
+                        "layout": {
+                            "h": 4,
+                            "w": 12,
+                            "x": 0,
+                            "y": 18,
+                            "i": "36fb35e9-98e0-430d-abc9-28beba71f7d2",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_send_packages_per_second"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "send_packages_per_second",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_send_packages_per_second",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "每秒发送数据包数",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "25dc1228-bb58-4b04-96b8-a291af0d94c4",
+                        "layout": {
+                            "h": 4,
+                            "w": 12,
+                            "x": 12,
+                            "y": 18,
+                            "i": "f258581f-647d-4390-aecc-bbe156c878b1",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_receive_packages_per_second"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "receive_packages_per_second",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_receive_packages_per_second",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "每秒接收数据包数",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "e05f6d3a-ce4c-4fcc-a5bb-1705526d5e5d",
+                        "layout": {
+                            "h": 4,
+                            "w": 12,
+                            "x": 0,
+                            "y": 22,
+                            "i": "2fef5baf-1be9-40ac-bdbc-182fac05ff81",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_send_bytes_per_second"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "send_bytes_per_second",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_send_bytes_per_second",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "每秒发送字节数",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "d2b2fb16-916b-46c0-bd0a-5f0b4e9c286b",
+                        "layout": {
+                            "h": 4,
+                            "w": 12,
+                            "x": 12,
+                            "y": 22,
+                            "i": "7adc1e88-3f21-4254-9912-84c0ede266d4",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_receive_bytes_per_second"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "receive_bytes_per_second",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_receive_bytes_per_second",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "每秒接收字节数",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "1895012d-4cc4-4763-9bd3-e2e2b2119126",
+                        "layout": {
+                            "h": 4,
+                            "w": 12,
+                            "x": 0,
+                            "y": 26,
+                            "i": "4fc94048-fe6c-441e-be37-453324ce713b",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_send_bytes_total"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "send_bytes_total",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_send_bytes_total",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "总发送字节数",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    },
+                    {
+                        "type": "timeseries",
+                        "id": "6b4ed734-3f6a-43f4-a82f-8a8bc6915716",
+                        "layout": {
+                            "h": 4,
+                            "w": 12,
+                            "x": 12,
+                            "y": 26,
+                            "i": "8f81c31a-29a2-46a0-aa4f-52ca6bc3d6ff",
+                            "isResizable": true
+                        },
+                        "version": "3.0.0",
+                        "datasourceCate": "prometheus",
+                        "datasourceValue": "${prom}",
+                        "targets": [
+                            {
+                                "refId": "A",
+                                "expr": "dm_receive_bytes_total"
+                            }
+                        ],
+                        "transformations": [
+                            {
+                                "id": "organize",
+                                "options": {}
+                            }
+                        ],
+                        "name": "receive_bytes_total",
+                        "links": [
+                            {
+                                "title": "指标查询链接",
+                                "url": "/metric/explorer?prom_ql=dm_receive_bytes_total",
+                                "targetBlank": true
+                            }
+                        ],
+                        "description": "总接收字节数",
+                        "maxPerRow": 4,
+                        "options": {
+                            "tooltip": {
+                                "mode": "all",
+                                "sort": "none"
+                            },
+                            "legend": {
+                                "displayMode": "hidden",
+                                "behaviour": "showItem"
+                            },
+                            "standardOptions": {},
+                            "thresholds": {
+                                "steps": [
+                                    {
+                                        "color": "#634CD9",
+                                        "value": null,
+                                        "type": "base"
+                                    }
+                                ]
+                            }
+                        },
+                        "custom": {
+                            "drawStyle": "lines",
+                            "lineInterpolation": "smooth",
+                            "spanNulls": false,
+                            "lineWidth": 1,
+                            "fillOpacity": 0,
+                            "gradientMode": "none",
+                            "stack": "off",
+                            "scaleDistribution": {
+                                "type": "linear"
+                            }
+                        },
+                        "overrides": [
+                            {
+                                "matcher": {
+                                    "id": "byFrameRefID"
+                                },
+                                "properties": {
+                                    "rightYAxisDisplay": "off"
+                                }
+                            }
+                        ]
+                    }
+                ]
+            }
+        ],
+        "var": [
+            {
+                "definition": "prometheus",
+                "name": "prom",
+                "type": "datasource"
+            },
+            {
+                "name": "busigroup",
+                "label": "业务组",
+                "type": "textbox",
+                "hide": true,
+                "defaultValue": ""
+            },
+            {
+                "datasource": {
+                    "cate": "prometheus",
+                    "value": "${prom}"
+                },
+                "definition": "label_values(dm_up{busigroup=\"$busigroup\"},ident)",
+                "name": "ident",
+                "type": "query"
+            }
+        ],
+        "version": "3.0.0"
+    }
+}

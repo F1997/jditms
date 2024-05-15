@@ -1,0 +1,30 @@
+# collect interval
+interval = 15
+
+# Gather metrics from the tongweb server status page.
+[[instances]]
+## URL of the tongweb server status
+url = "http://ip:1921"
+
+
+# HTTP Basic Auth Credentials
+username = "" # BES 管理控制台登录用户名
+password = "" # BES 管理控制台登录密码
+
+# Request timeout
+timeout = "5s"
+
+# interval = global.interval * interval_times
+interval_times = 1
+
+# important! use global unique string to specify instance
+labels = { instance="宝兰徳", address="ip:1921" }
+
+# Optional TLS Config
+use_tls = false
+tls_min_version = "1.2"
+tls_ca = "/etc/jditms_agent/ca.pem"
+tls_cert = "/etc/jditms_agent/cert.pem"
+tls_key = "/etc/jditms_agent/key.pem"
+# Use TLS but skip chain & host verification
+insecure_skip_verify = true

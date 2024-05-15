@@ -1,0 +1,32 @@
+# collect interval
+interval = 15
+
+[[instances]]
+address = "ip"
+username = "your username"
+password = "your password"
+dbname = "dbname"
+sslmode ="disable"
+
+
+# set tls=custom to enable tls
+parameters = "tls=false"
+
+
+# timeout
+timeout_seconds = 3
+
+# interval = global.interval * interval_times
+interval_times = 1
+
+# important! use global unique string to specify instance
+labels = { instance="KingBase" }
+
+# Optional TLS Config
+use_tls = false
+tls_min_version = "1.2"
+tls_ca = "/etc/jditms_agent/ca.pem"
+tls_cert = "/etc/jditms_agent/cert.pem"
+tls_key = "/etc/jditms_agent/key.pem"
+# Use TLS but skip chain & host verification
+insecure_skip_verify = true
